@@ -1,4 +1,5 @@
-import { Component, onMount } from "solid-js";
+import { Component, onMount, Show } from "solid-js";
+import { isMobile } from "../store/userAgent";
 
 const Header: Component = () => {
   let deferredPrompt: any | null = null;
@@ -45,20 +46,24 @@ const Header: Component = () => {
   };
 
   return (
-    <div class="max-w-screen-sm mx-auto px-4">
-      <h1 class="text-3xl underline font-medium capitalize">
-        Todo you'r daily tasks assistant
-      </h1>
-      <div>
+    <>
+      <Show when={isMobile()} fallback={null}>
         <button
           ref={installButtonRef}
           onClick={handleInstallClick}
+          class="banner"
           style={{ display: "none" }}
         >
           Install the app
         </button>
+      </Show>
+
+      <div class="max-w-screen-sm mx-auto p-4">
+        <h1 class="text-3xl underline font-medium capitalize">
+          Todo you'r daily tasks assistant
+        </h1>
       </div>
-    </div>
+    </>
   );
 };
 

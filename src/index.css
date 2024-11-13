@@ -7,4 +7,9 @@
 * {
   font-family: "Sour Gummy", sans-serif;
   font-optical-sizing: auto;
+  background: #ffddae;
+}
+
+.banner {
+  @apply bg-blue-600 flex justify-center w-full gap-2 text-lg text-white p-2;
 }

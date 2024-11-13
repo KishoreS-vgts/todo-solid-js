@@ -47,7 +47,7 @@ const Arrow = () => {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="lucide lucide-move-left"
+      class="lucide lucide-move-left bg-blue-600"
     >
       <path d="M6 8L2 12L6 16" />
       <path d="M2 12H22" />
