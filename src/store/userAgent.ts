@@ -13,7 +13,10 @@ const isMobileCheck = () => {
     setIsMobile(false);
   }
 };
+const dismissMobileCheck = () => {
+  setIsMobile(false);
+};
 
 isMobileCheck();
 
-export { isMobile };
+export { isMobile, dismissMobileCheck };

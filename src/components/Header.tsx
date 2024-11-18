@@ -1,5 +1,5 @@
 import { Component, onMount, Show } from "solid-js";
-import { isMobile } from "../store/userAgent";
+import { dismissMobileCheck, isMobile } from "../store/userAgent";
 
 const Header: Component = () => {
   let deferredPrompt: any | null = null;
@@ -36,6 +36,9 @@ const Header: Component = () => {
           outcome === "accepted" ? "accepted" : "dismissed"
         } the install prompt`
       );
+      if (outcome === "dismissed") {
+        dismissMobileCheck();
+      }
       // Clear the deferred prompt variable
       deferredPrompt = null;
       // Hide the install button after prompt is shown
